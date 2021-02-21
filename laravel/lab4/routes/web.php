@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\StudentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,3 +23,7 @@ Route:: get('/mainIdea', function() {
 Route:: get('/post/{id}/{name}/{surname}', function($id, $name,$surname) {
 	return "My name is ".$name." ".$surname;
 });
+
+Route::get('/students/{id}', [StudentController::class, 'get_students']);
+Route::get('/birth2/{id}', [StudentController::class, 'get_data']);
+Route::get('/age2/{id}', [StudentController::class, 'get_age']);
